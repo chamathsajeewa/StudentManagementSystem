@@ -1,0 +1,64 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package org.cse.springtute.test;
+import org.cse.springtute.SimpleStudentRepository;
+import org.cse.springtute.Student;
+import org.junit.*;
+/**
+ *
+ * @author chamath
+ */
+public class testSimpleStudentRepository {
+
+    SimpleStudentRepository rep;
+    @Before
+    public void setUp(){
+         rep=new SimpleStudentRepository();
+    }
+
+    @Test
+    public void TestSaveStudent(){
+        Student stu1=new Student("Isuru","Jayasinghe",1L,"Ragama");
+        Student stu2=new Student("Tharindu","Gunasinghe",2L,"Gampaha");
+        rep.saveStudent(stu1);
+        rep.saveStudent(stu2);
+        Student stu=rep.findStudent(2L);
+        System.out.println(""+stu.getFirstName());
+        
+       // Assert.assertEquals(null, stu2, stu2);
+    }
+
+    @Test
+    public void TestDeleteStudent(){
+        
+        Student stu=rep.findStudent(2L);
+        System.out.println(""+stu.getFirstName());
+        Assert.assertNull(rep.findStudent(1245L));
+
+
+    }
+
+    @Test
+    public void TestFindStudent(){
+
+    }
+
+    @Test
+    public void TestUpdateStudent(){
+
+    }
+
+    @Test
+    public void TestFindAllStudent(){
+
+    }
+    @After
+    public void tearDown(){
+
+    }
+
+
+}
