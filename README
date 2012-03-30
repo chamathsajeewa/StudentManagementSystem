@@ -1,4 +1,4 @@
 Student Management System
 
 testStudenMangementSystem.txt and testSimpleStudentRepository.txt are two classes used for testings 
-spring-context.xml is used for create beans
+spring-context.xml is used for spring framework.
